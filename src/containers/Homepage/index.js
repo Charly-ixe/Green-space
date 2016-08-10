@@ -9,6 +9,9 @@ import {
 } from 'config/messages';
 
 import ExampleComponent from 'components/Example';
+import LeftColumnComponent from 'components/Left-column';
+import CenterColumnComponent from 'components/Center-column';
+import RightColumnComponent from 'components/Right-column';
 
 export default Vue.extend({
 
@@ -58,7 +61,7 @@ export default Vue.extend({
       console.log(`Window resize from application with debounce -> width: ${width}px || height: ${height}`);
       /*eslint-enable */
     }
-    
+
   },
 
   transitions: {
@@ -66,6 +69,9 @@ export default Vue.extend({
   },
 
   components: {
-    'example-component': ExampleComponent
+    'example-component': ExampleComponent,
+    'left-column-component': LeftColumnComponent,
+    'center-column-component': CenterColumnComponent,
+    'right-column-component': RightColumnComponent
   }
 });

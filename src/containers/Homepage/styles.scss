@@ -2,7 +2,7 @@
 @import '~stylesheets/common/mixins';
 
 .homepage {
-  text-align: center;
+  position: relative;
 }
 
 .homepage__title {
@@ -17,5 +17,6 @@
 }
 
 .homepage__content {
-  @include centerXY;
+  width: 100%;
+  height: 100%;
 }

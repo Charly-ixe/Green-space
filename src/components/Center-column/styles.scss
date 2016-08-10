@@ -1,6 +1,14 @@
 @import '~stylesheets/common/variables';
+@import '~stylesheets/common/mixins';
 
 .center-column {
-  display: inline-block;
-  margin-top: 3rem;
+  float: left;
+  width: calc(100vw / 3);
+  height: 100vh;
+  text-align: center;
+  cursor: pointer;
+}
+
+.open {
+  width: 90vw;
 }

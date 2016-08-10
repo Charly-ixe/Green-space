@@ -1,6 +1,15 @@
 @import '~stylesheets/common/variables';
+@import '~stylesheets/common/mixins';
 
 .right-column {
-  display: inline-block;
-  margin-top: 3rem;
+  float: left;
+  width: calc(100vw / 3);
+  height: 100vh;
+  background-color: $color-green;
+  text-align: center;
+  cursor: pointer;
+}
+
+.side {
+  width: 5vw;
 }

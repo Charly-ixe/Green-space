@@ -1,3 +1,16 @@
-<div class="center-column">
-	This is an example of a component.
+<div class="center-column" v-on:click="clickColumn" v-bind:class="{ 'column-open': columnOpen}">
+	<div class="center-column-content" v-show="showContent">
+		<div class="center-column-content-title">
+			Paris
+		</div>
+		<ul class="center-column-burger-menu" v-on:click="menuClick" v-bind:class="{ 'open': menuOpen }">
+			<li class="center-column-burger-element"></li>
+			<li class="center-column-burger-element"></li>
+		<li class="center-column-burger-element"></li>
+		</ul>
+		<ul class="center-column-burger-content" v-el:burgercontent>
+			<li class="center-column-burger-centent-element">Cities</li>
+			<li class="center-column-burger-centent-element">About</li>
+		</ul>
+	</div>
 </div>

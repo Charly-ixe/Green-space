@@ -1,6 +1,7 @@
 'use strict';
 
 import './styles.scss';
+import Emitter from 'core/Emitter';
 
 export default Vue.extend({
 
@@ -9,7 +10,10 @@ export default Vue.extend({
   data() {
 
     return {
-      _hidden: null
+      _hidden: null,
+      columnOpen: false,
+      showContent: false,
+      menuOpen: false
     };
   },
 
@@ -20,6 +24,8 @@ export default Vue.extend({
   ready() {
 
     this.addEventListeners();
+    this.menuElements = this.$els.burgercontent.getElementsByClassName('center-column-burger-centent-element');
+    TweenMax.set(this.menuElements, {opacity: 0});
   },
 
   beforeDestroy() {
@@ -37,6 +43,23 @@ export default Vue.extend({
     },
 
     addEventListeners() {
+    },
+
+    clickColumn() {
+      this.columnOpen = true;
+      Emitter.emit('CENTER_COLUMN_CLICK');
+      this.showContent = true;
+    },
+
+    menuClick() {
+      if(!this.menuOpen) {
+        this.menuOpen = true;
+        TweenMax.staggerFromTo(this.menuElements, 0.6, {opacity: 0, x: 100}, {opacity: 1, x: 0, ease: Expo.easeOut}, 0.1);
+      }
+      else {
+        this.menuOpen = false;
+        TweenMax.staggerFromTo(this.menuElements, 0.3, {opacity: 1, x: 0}, {opacity: 0, x: 100, ease: Expo.easeOut}, 0.1);
+      }
     },
 
     removeEventListeners() {

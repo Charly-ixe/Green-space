@@ -5,11 +5,13 @@
   float: left;
   width: calc(100vw / 3);
   height: 100vh;
-  background-color: $color-green;
   text-align: center;
+  background-color: grey;
   cursor: pointer;
-}
+  transition: all 0.3s ease;
 
-.side {
-  width: 5vw;
+  &.column-sided {
+    width: 5vw;
+	background-color: $color-green;
+  }
 }

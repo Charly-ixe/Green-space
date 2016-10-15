@@ -7,6 +7,7 @@ const messages = {
    */
 
   WINDOW_RESIZE: 'WINDOW_RESIZE',
+  CENTER_COLUMN_CLICK: 'CENTER_COLUMN_CLICK',
 
   /*
    * ROUTER

@@ -1,6 +1,11 @@
 'use strict';
 
 import './styles.scss';
+import Emitter from 'core/Emitter';
+
+import {
+  CENTER_COLUMN_CLICK
+} from 'config/messages';
 
 export default Vue.extend({
 
@@ -9,7 +14,8 @@ export default Vue.extend({
   data() {
 
     return {
-      _hidden: null
+      _hidden: null,
+      columnSided: false
     };
   },
 
@@ -37,6 +43,11 @@ export default Vue.extend({
     },
 
     addEventListeners() {
+      Emitter.on(CENTER_COLUMN_CLICK, this.reduceColumn);
+    },
+
+    reduceColumn() {
+      this.columnSided = true;
     },
 
     removeEventListeners() {

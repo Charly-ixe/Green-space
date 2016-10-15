@@ -2,6 +2,8 @@
 
 import './styles.scss';
 
+import 'gsap';
+
 import Emitter from 'core/Emitter';
 
 import {

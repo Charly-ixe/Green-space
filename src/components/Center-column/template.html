@@ -1,4 +1,4 @@
-<div class="center-column" v-on:click="clickColumn" v-bind:class="{ 'column-open': columnOpen}">
+<div class="center-column" v-on:click="clickColumn" v-bind:class="{ 'column-open': columnOpen}" v-el:centercolumn>
 	<div class="center-column-content" v-show="showContent">
 		<div class="center-column-content-title">
 			Paris
@@ -9,8 +9,8 @@
 		<li class="center-column-burger-element"></li>
 		</ul>
 		<ul class="center-column-burger-content" v-el:burgercontent>
-			<li class="center-column-burger-centent-element">Cities</li>
-			<li class="center-column-burger-centent-element">About</li>
+			<li class="center-column-burger-centent-element" v-on:click="clickCities">Cities</li>
+			<li class="center-column-burger-centent-element" v-on:click="clickAbout">About</li>
 		</ul>
 	</div>
 </div>

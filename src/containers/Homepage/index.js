@@ -7,13 +7,16 @@ import 'gsap';
 import Emitter from 'core/Emitter';
 
 import {
-  WINDOW_RESIZE
+  WINDOW_RESIZE,
+  ABOUT_CLICK,
+  CLOSE_ABOUT_CLICK
 } from 'config/messages';
 
 import ExampleComponent from 'components/Example';
 import LeftColumnComponent from 'components/Left-column';
 import CenterColumnComponent from 'components/Center-column';
 import RightColumnComponent from 'components/Right-column';
+import AboutComponent from 'components/About';
 
 export default Vue.extend({
 
@@ -22,7 +25,8 @@ export default Vue.extend({
   data() {
 
     return {
-      _hidden: null
+      _hidden: null,
+      aboutVisible: false
     };
   },
 
@@ -52,10 +56,22 @@ export default Vue.extend({
 
     addEventListeners() {
       Emitter.on(WINDOW_RESIZE, this.onWindowResize);
+      Emitter.on(ABOUT_CLICK, this.showAbout);
+      Emitter.on(CLOSE_ABOUT_CLICK, this.hideAbout);
+    },
+
+    showAbout() {
+      this.aboutVisible = true;
+    },
+
+    hideAbout() {
+      this.aboutVisible = false;
     },
 
     removeEventListeners() {
       Emitter.off(WINDOW_RESIZE, this.onWindowResize);
+      Emitter.off(ABOUT_CLICK, this.showAbout);
+      Emitter.off(CLOSE_ABOUT_CLICK, this.showAbout);
     },
 
     onWindowResize({width, height}) {
@@ -74,6 +90,7 @@ export default Vue.extend({
     'example-component': ExampleComponent,
     'left-column-component': LeftColumnComponent,
     'center-column-component': CenterColumnComponent,
-    'right-column-component': RightColumnComponent
+    'right-column-component': RightColumnComponent,
+    'about-component': AboutComponent
   }
 });

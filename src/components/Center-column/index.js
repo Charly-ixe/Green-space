@@ -54,12 +54,20 @@ export default Vue.extend({
     menuClick() {
       if(!this.menuOpen) {
         this.menuOpen = true;
-        TweenMax.staggerFromTo(this.menuElements, 0.6, {opacity: 0, x: 100}, {opacity: 1, x: 0, ease: Expo.easeOut}, 0.1);
+        TweenMax.staggerFromTo(this.menuElements, 0.5, {opacity: 0, x: 100}, {opacity: 1, x: 0, ease: Expo.easeOut}, 0.1);
       }
       else {
         this.menuOpen = false;
         TweenMax.staggerFromTo(this.menuElements, 0.3, {opacity: 1, x: 0}, {opacity: 0, x: 100, ease: Expo.easeOut}, 0.1);
       }
+    },
+
+    clickCities() {
+
+    },
+
+    clickAbout() {
+      Emitter.emit('ABOUT_CLICK');
     },
 
     removeEventListeners() {

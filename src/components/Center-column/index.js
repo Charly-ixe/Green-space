@@ -13,7 +13,8 @@ export default Vue.extend({
       _hidden: null,
       columnOpen: false,
       showContent: false,
-      menuOpen: false
+      menuOpen: false,
+      homeVisible: true
     };
   },
 
@@ -49,6 +50,7 @@ export default Vue.extend({
       this.columnOpen = true;
       Emitter.emit('CENTER_COLUMN_CLICK');
       this.showContent = true;
+      this.homeVisible = false;
     },
 
     menuClick() {

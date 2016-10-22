@@ -1,4 +1,13 @@
 <div class="center-column" v-on:click="clickColumn" v-bind:class="{ 'column-open': columnOpen}" v-el:centercolumn>
+	<div v-show="homeVisible" transition="hide-elements">
+		<div class="center-column-title">
+			<span class="center-column-title-line-one">How much</span><br>
+			<span class="center-column-title-line-two">Green Space</span><br>
+			<span class="center-column-title-line-three">Per Person Do We Have</span><br>
+		</div>
+		<div class="center-column-monument"></div>
+		<div class="center-column-clouds"></div>
+	</div>
 	<div class="center-column-content" v-show="showContent">
 		<div class="center-column-content-title">
 			Paris

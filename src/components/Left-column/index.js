@@ -15,7 +15,8 @@ export default Vue.extend({
 
     return {
       _hidden: null,
-      columnSided: false
+      columnSided: false,
+      homeVisible: true
     };
   },
 
@@ -48,6 +49,7 @@ export default Vue.extend({
 
     reduceColumn() {
       this.columnSided = true;
+      this.homeVisible = false;
     },
 
     removeEventListeners() {

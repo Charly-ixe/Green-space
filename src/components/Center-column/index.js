@@ -14,7 +14,8 @@ export default Vue.extend({
       columnOpen: false,
       showContent: false,
       menuOpen: false,
-      homeVisible: true
+      homeVisible: true,
+      currentId: 0
     };
   },
 
@@ -26,7 +27,10 @@ export default Vue.extend({
 
     this.addEventListeners();
     this.menuElements = this.$els.burgercontent.getElementsByClassName('center-column-burger-centent-element');
+    this.navigationElt = this.$els.navigationelt.getElementsByClassName('center-column-navigation-dots');
     TweenMax.set(this.menuElements, {opacity: 0});
+
+    this.navigationElt[this.currentId].classList.add('active');
   },
 
   beforeDestroy() {

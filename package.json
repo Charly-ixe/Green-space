@@ -1,7 +1,7 @@
 {
-  "name": "Vue-Js-Webpack-boilerplate",
+  "name": "Green Space",
   "version": "1.0.0",
-  "description": "My vue.js boilerplate using webpack, gsap written in es2015",
+  "description": "Data Viz Workshop at Gobelins",
   "keywords": [
     "vue.js",
     "vuejs",

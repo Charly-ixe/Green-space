@@ -48,13 +48,19 @@ export default Vue.extend({
     },
 
     addEventListeners() {
+      window.addEventListener('keydown', this.keyPress, false);
     },
 
     clickColumn() {
-      this.columnOpen = true;
-      Emitter.emit('CENTER_COLUMN_CLICK');
-      this.showContent = true;
-      this.homeVisible = false;
+      let pageTitle = this.$els.pagetitle;
+      TweenMax.to(pageTitle, 0.3, {opacity: 0, y: -50});
+      setTimeout(()=> {
+        this.columnOpen = true;
+        Emitter.emit('CENTER_COLUMN_CLICK');
+        this.showContent = true;
+        this.homeVisible = false;
+      }, 500);
+
     },
 
     menuClick() {
@@ -74,6 +80,10 @@ export default Vue.extend({
 
     clickAbout() {
       Emitter.emit('ABOUT_CLICK');
+    },
+
+    keyPress() {
+      this.currentId += 1;
     },
 
     removeEventListeners() {

@@ -1,5 +1,5 @@
 {
-  "name": "Green Space",
+  "name": "Green-space",
   "version": "1.0.0",
   "description": "Data Viz Workshop at Gobelins",
   "keywords": [
@@ -14,13 +14,13 @@
   "private": true,
   "main": "index.js",
   "author": {
-    "name": "Patrick Heng",
-    "url": "http://hengpatrick.fr/",
-    "mail": "hengpatrick.pro@gmail.com"
+    "name": "Charly G.",
+    "url": "http://charlyg.space/",
+    "mail": "j.gigonnet@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/patrickheng/vuejs-webpack-boilerplate.git"
+    "url": "https://github.com/Charly-ixe/Green-space.git"
   },
   "scripts": {
     "lint": "eslint .",
